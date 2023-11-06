@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_crime
+    columns:
+      - name: teguchi
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                [
+                  "ひったくり",
+                  "オートバイ盗",
+                  "自動車盗",
+                  "部品ねらい",
+                  "自動販売機ねらい",
+                  "車上ねらい",
+                  "自転車盗",
+                ]
+      - name: occurrence_date
+        tests:
+          - not_null
+  - name: stg_weather
+    columns:
+      - name: weather_date
+        tests:
+          - not_null
