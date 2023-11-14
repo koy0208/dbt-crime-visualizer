@@ -3,6 +3,10 @@ version: 2
 models:
   - name: stg_crime
     columns:
+      - name: key_id
+        tests:
+          - not_null
+          - unique
       - name: teguchi
         tests:
           - not_null
@@ -20,8 +24,9 @@ models:
       - name: occurrence_date
         tests:
           - not_null
-  - name: stg_weather
+  - name: stg_daily_weather
     columns:
       - name: weather_date
         tests:
           - not_null
+          - unique

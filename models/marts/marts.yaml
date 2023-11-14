@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: fct_crime_info
+    columns:
+      - name: key_id
+        tests:
+          - not_null
+          - unique

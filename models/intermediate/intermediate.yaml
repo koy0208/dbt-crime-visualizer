@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: int_coordinate_master
+    columns:
+      - name: address_num
+        tests:
+          - not_null
+          - unique
