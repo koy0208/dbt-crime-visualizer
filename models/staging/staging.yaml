@@ -1,9 +1,9 @@
 version: 2
 
 models:
-  - name: stg_crime
+  - name: stg_tokyo_crimes
     columns:
-      - name: key_id
+      - name: tokyo_crimes_id
         tests:
           - not_null
           - unique
@@ -24,7 +24,7 @@ models:
       - name: occurrence_date
         tests:
           - not_null
-  - name: stg_daily_weather
+  - name: stg_daily_weathers
     columns:
       - name: weather_date
         tests:

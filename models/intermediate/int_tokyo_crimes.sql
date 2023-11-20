@@ -2,19 +2,19 @@ with stg as (
     select
         *
     from
-        {{ ref("stg_crime") }}
+        {{ ref("stg_tokyo_crimes") }}
 ),
-int as (
+add_columns as (
     select
         *,
-        prefecture || city || cyoume as address,
+        prefecture || city || cyoume as occurrence_address,
         date_trunc(occurrence_date, year) as occurrence_year,
         date_trunc(occurrence_date, month) as occurrence_month,
         cast(
             case
                 when occurrence_time = '不明' then null
                 else occurrence_time
-            end as numeric
+            end as int
         ) as occurrence_time_num
     from
         stg
@@ -24,9 +24,9 @@ int as (
 fin as (
     select
         *,
-        {{ kanji_to_num("address") }} as address_num
+        {{ kanji_to_num("occurrence_address") }} as occurrence_address_num
     from
-        int
+        add_columns
 )
 select
     *

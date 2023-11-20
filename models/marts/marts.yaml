@@ -1,9 +1,16 @@
 version: 2
 
 models:
-  - name: fct_crime_info
+  - name: fct_analysis_crimes
     columns:
-      - name: key_id
+      - name: tokyo_crimes_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_coordinate_masters
+    columns:
+      - name: address_num
         tests:
           - not_null
           - unique

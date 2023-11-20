@@ -2,7 +2,7 @@ with source as (
     select
         *
     from
-        {{ source("bigquery", "daily_weather") }}
+        {{ source("bigquery", "daily_weathers") }}
 ),
 stg as (
     select

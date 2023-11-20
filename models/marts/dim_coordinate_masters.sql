@@ -2,7 +2,7 @@ with stg as (
     select
         *
     from
-        {{ ref("stg_coordinate_master") }}
+        {{ ref("stg_coordinate_masters") }}
 ),
 int1 as (
     select

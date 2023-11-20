@@ -2,7 +2,7 @@ with source as (
     select
         *
     from
-        {{ source("bigquery", "coordinate_master") }}
+        {{ source("bigquery", "coordinate_masters") }}
 ),
 stg as (
     select

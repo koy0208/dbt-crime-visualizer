@@ -2,6 +2,7 @@
 target/
 dbt_packages/
 logs/
-**/credential.json
+**/*credential.json
 **/raw.yaml
+.vscode
 dbt-env

@@ -2,12 +2,11 @@ with source as (
     select
         *
     from
-        {{ source("bigquery", "crime") }}
+        {{ source("bigquery", "tokyo_crimes") }}
 ),
 stg as (
     select
-        row_number()over() as key_id,
-        zaimei,
+        row_number()over() as tokyo_crimes_id,
         teguchi,
         prefecture,
         city,
@@ -21,6 +20,7 @@ stg as (
         source
     where
         occurrence_date not in ('不明')
+        and prefecture != ''
 )
 select
     *
