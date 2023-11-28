@@ -1,0 +1,9 @@
+version: 2
+sources:
+  - name: bigquery
+    database: crime-visualizer
+    schema: crime_dataset
+    tables:
+      - name: tokyo_crimes
+      - name: daily_weathers
+      - name: coordinate_masters
