@@ -34,6 +34,7 @@ _join as (
         c.victim_sex,
         c.victim_age,
         c.occurrence_time,
+        c.occurrence_time_str,
         c.occurrence_date,
         c.occurrence_month,
         cm.longitude,
